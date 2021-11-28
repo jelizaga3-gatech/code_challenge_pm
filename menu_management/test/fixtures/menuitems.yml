@@ -3,21 +3,21 @@
 one:
   title: MyString
   body: MyText
-  menu: one
+  menus: [one]
 
 two:
   title: SalmonDish1
   body: TastySalmonWithLemon
-  menu: two
+  menus: [two]
 
 
 three:
   title: SteakDish2
   body: JuicySteakWithButter
-  menu: two
+  menus: [two]
 
 
 four:
   title: ShrimpDish1
   body: ShrimpAndGritsAlaCarte
-  menu: two
+  menus: [two]

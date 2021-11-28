@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_27_233406) do
+ActiveRecord::Schema.define(version: 2021_11_28_003352) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
@@ -36,5 +36,11 @@ ActiveRecord::Schema.define(version: 2021_11_27_233406) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "menuitems", "menus"
+  create_table "menus_menuitems", id: false, force: :cascade do |t|
+    t.integer "menus_id"
+    t.integer "menuitems_id"
+    t.index ["menuitems_id"], name: "index_menus_menuitems_on_menuitems_id"
+    t.index ["menus_id"], name: "index_menus_menuitems_on_menus_id"
+  end
+
 end
