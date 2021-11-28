@@ -6,4 +6,9 @@ class MenuitemTest < ActiveSupport::TestCase
     menu_item = Menuitem.new(menu:seafood_menu)
     assert_not menu_item.save
   end
+
+  test 'Each menu item should be a part of at least one menu' do 
+    menu_item = Menuitem.new(price:123.34)
+    assert_not menu_item.save
+  end
 end
