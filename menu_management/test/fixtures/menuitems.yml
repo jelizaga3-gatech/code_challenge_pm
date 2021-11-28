@@ -6,6 +6,18 @@ one:
   menu: one
 
 two:
-  title: MyString
-  body: MyText
+  title: SalmonDish1
+  body: TastySalmonWithLemon
+  menu: two
+
+
+three:
+  title: SteakDish2
+  body: JuicySteakWithButter
+  menu: two
+
+
+four:
+  title: ShrimpDish1
+  body: ShrimpAndGritsAlaCarte
   menu: two

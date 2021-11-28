@@ -6,4 +6,9 @@ class MenuTest < ActiveSupport::TestCase
     menu = Menu.new 
     assert_not menu.save 
   end
+
+  test "Menu 'two' should have 3 menu items" do 
+    menu = Menu.find_by(title:'seafood_1')
+    assert_equal 3, menu.menuitems.size
+  end  
 end
