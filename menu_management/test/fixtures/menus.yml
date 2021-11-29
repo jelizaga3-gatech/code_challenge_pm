@@ -3,7 +3,9 @@
 one:
   title: MyString
   body: MyText
+  menuitems: []
 
 two:
   title: seafood_1
   body: MyText
+  menuitems: []

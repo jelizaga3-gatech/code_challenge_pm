@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_28_003352) do
+ActiveRecord::Schema.define(version: 2021_11_29_011357) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
@@ -22,11 +22,17 @@ ActiveRecord::Schema.define(version: 2021_11_28_003352) do
   create_table "menuitems", force: :cascade do |t|
     t.string "title"
     t.text "body"
-    t.integer "menu_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.decimal "price", precision: 5, scale: 2
-    t.index ["menu_id"], name: "index_menuitems_on_menu_id"
+    t.index ["title"], name: "index_menuitems_on_title", unique: true
+  end
+
+  create_table "menuitems_menus", id: false, force: :cascade do |t|
+    t.integer "menu_id", null: false
+    t.integer "menuitem_id", null: false
+    t.index ["menu_id", "menuitem_id"], name: "index_menuitems_menus_on_menu_id_and_menuitem_id"
+    t.index ["menuitem_id", "menu_id"], name: "index_menuitems_menus_on_menuitem_id_and_menu_id"
   end
 
   create_table "menus", force: :cascade do |t|
@@ -34,13 +40,17 @@ ActiveRecord::Schema.define(version: 2021_11_28_003352) do
     t.text "body"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "restaurants_id"
+    t.index ["restaurants_id"], name: "index_menus_on_restaurants_id"
   end
 
-  create_table "menus_menuitems", id: false, force: :cascade do |t|
-    t.integer "menus_id"
-    t.integer "menuitems_id"
-    t.index ["menuitems_id"], name: "index_menus_menuitems_on_menuitems_id"
-    t.index ["menus_id"], name: "index_menus_menuitems_on_menus_id"
+  create_table "restaurants", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.string "location"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "menus", "restaurants", column: "restaurants_id"
 end
