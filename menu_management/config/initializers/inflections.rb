@@ -14,3 +14,10 @@
 # ActiveSupport::Inflector.inflections(:en) do |inflect|
 #   inflect.acronym 'RESTful'
 # end
+
+
+ActiveSupport::Inflector.inflections do |inflect|
+    inflect.irregular 'menuitem', 'menuitems'
+    inflect.irregular 'add_on', 'add_ons'
+  end
+  

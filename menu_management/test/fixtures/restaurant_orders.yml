@@ -1,0 +1,10 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+order1: 
+  diner: diner_one
+  restaurant:  one
+  # menu_item_orders: []
+order2: 
+  diner: dinertwo
+  restaurant: one
+  # menu_item_orders: []

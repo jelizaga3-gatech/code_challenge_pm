@@ -25,4 +25,5 @@ class MenuTest < ActiveSupport::TestCase
     assert seafood_restaurant.save 
     assert_equal 1, seafood_restaurant.menus.size
   end
+
 end

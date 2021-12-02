@@ -15,9 +15,11 @@ three:
   title: SteakDish2
   body: JuicySteakWithButter
   menus: [two]
+  price: 1241.12
 
 
 four:
   title: ShrimpDish1
   body: ShrimpAndGritsAlaCarte
   menus: [two]
+  add_ons: [dressingOne]

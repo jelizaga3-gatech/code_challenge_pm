@@ -1,6 +1,12 @@
 require "test_helper"
 
 class MenuitemTest < ActiveSupport::TestCase
+  test "Create menu item with salad add on" do
+    dressing_add_on = AddOn.find_by(name:"ThousandIslandDressing")
+    salad = Menuitem.new(title:"Salad", add_ons:[dressing_add_on], price: 1231.10)
+    assert salad.save()
+  end
+
   test 'Each menu item should have a price' do 
     seafood_menu = Menu.find_by(title:"seafood_1")
     menu_item = Menuitem.new(menus:[seafood_menu])
