@@ -4,7 +4,7 @@ one:
   title: MyString
   body: MyText
   menuitems: []
-
+  category: "entrees"
 two:
   title: seafood_1
   body: MyText
